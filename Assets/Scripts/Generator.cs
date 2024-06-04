@@ -31,18 +31,20 @@ public class Generator : MonoBehaviour
 
     private void Spawn(Cube cube)
     {
-        if (cube.ChanceSeparate >= UnityEngine.Random.Range(_minChance, _maxChance + 1))
+        List<Cube> createdCubes = new List<Cube>();
+
+        if (cube.ChanceSeparate >= UnityEngine.Random.Range(_minChance, _maxChance))
         {
             int countSpawn = RandomCount();
 
             for (int i = _minCount; i <= countSpawn; i++)
             {
-                _cubes.Add(InstantiateCubes(cube));
+                createdCubes.Add(InstantiateCubes(cube));
             }
 
             _cubes.Remove(cube);
-            Destroyed?.Invoke(_cubes);
             cube.Clicked -= Spawn;
+            Destroyed?.Invoke(createdCubes);
         }
     }
 
@@ -60,5 +62,5 @@ public class Generator : MonoBehaviour
 
     private Color RandomColor() => UnityEngine.Random.ColorHSV();
 
-    private int RandomCount() => UnityEngine.Random.Range(_minCount, _maxCount + 1);
+    private int RandomCount() => UnityEngine.Random.Range(_minCount, _maxCount);
 }

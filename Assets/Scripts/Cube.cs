@@ -1,30 +1,35 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(Renderer))]
+[RequireComponent(typeof(Rigidbody), typeof(Renderer), typeof(ClickableObject))]
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
     [SerializeField] private int _chanceSeparate = 100;
 
-    private Ray _ray;
     private Rigidbody _rigidbody;
     private Renderer _renderer;
+    private ClickableObject _clickableObject;
+
+    public int ChanceSeparate => _chanceSeparate;
 
     public event Action<Cube> Clicked;
 
-    public int ChanceSeparate => _chanceSeparate;
+    private void OnEnable()
+    {
+        _clickableObject.Clicked += DestroyCube;
+    }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _renderer = GetComponent<Renderer>();
+        _clickableObject = GetComponent<ClickableObject>();
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if (Input.GetMouseButtonDown(0))
-            CheckRaycast();
+        _clickableObject.Clicked -= DestroyCube;
     }
 
     public void DivideChance(int divider) => _chanceSeparate /= divider;
@@ -47,20 +52,11 @@ public class Cube : MonoBehaviour
         }
     }
 
-    private float RandomValue(float minValue, float maxValue) => UnityEngine.Random.Range(minValue, maxValue + 1);
-
-    private void CheckRaycast()
+    private void DestroyCube()
     {
-        _ray = _camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
-        {
-            if (hit.transform == transform)
-            {
-                Clicked?.Invoke(this);
-                Destroy(gameObject);
-            }
-        }
+        Clicked?.Invoke(this);
+        Destroy(gameObject); 
     }
+
+    private float RandomValue(float minValue, float maxValue) => UnityEngine.Random.Range(minValue, maxValue);
 }
