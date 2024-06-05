@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Exploser : MonoBehaviour
+public class Explosion : MonoBehaviour
 {
     [SerializeField] private float _power = 5f;
     [SerializeField] private Generator _generator;

@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Renderer))]
@@ -10,9 +9,9 @@ public class Cube : MonoBehaviour
     private Rigidbody _rigidbody;
     private Renderer _renderer;
 
-    public int ChanceSeparate => _chanceSeparate;
-
     public event Action<Cube> Clicked;
+
+    public int ChanceSeparate => _chanceSeparate;
 
     private void Awake()
     {
@@ -20,28 +19,28 @@ public class Cube : MonoBehaviour
         _renderer = GetComponent<Renderer>();
     }
 
-    public void DivideChance(int divider) => _chanceSeparate /= divider;
-
-    public void SetColor(Color newColor)
+    public void Initialize(int dividerScale, int dividerChance)
     {
-        _renderer.material.color = newColor;
+        transform.localScale /= dividerScale;
+        _chanceSeparate /= dividerChance;
+        _renderer.material.color = UnityEngine.Random.ColorHSV();
     }
 
     public void AddForce(float force)
     {
         float minValue = 50f;
         float maxValue = 100f;
-        Vector3 direction = new Vector3(force * RandomValue(minValue, maxValue + 1),
-                force * RandomValue(minValue, maxValue + 1), force * RandomValue(minValue, maxValue + 1));
+        Vector3 direction = new Vector3(force * RandomizeValue(minValue, maxValue + 1),
+                force * RandomizeValue(minValue, maxValue + 1), force * RandomizeValue(minValue, maxValue + 1));
 
         _rigidbody.AddForce(direction);
     }
 
-    public void DestroyCube()
+    public void Destroy()
     {
         Clicked?.Invoke(this);
         Destroy(gameObject);
     }
 
-    private float RandomValue(float minValue, float maxValue) => UnityEngine.Random.Range(minValue, maxValue);
+    private float RandomizeValue(float minValue, float maxValue) => UnityEngine.Random.Range(minValue, maxValue);
 }

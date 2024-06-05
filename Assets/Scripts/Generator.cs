@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Generator : MonoBehaviour
@@ -35,7 +34,7 @@ public class Generator : MonoBehaviour
 
         if (cube.ChanceSeparate >= UnityEngine.Random.Range(_minChance, _maxChance))
         {
-            int countSpawn = RandomCount();
+            int countSpawn = RandomizeCount();
 
             for (int i = _minCount; i <= countSpawn; i++)
             {
@@ -51,16 +50,11 @@ public class Generator : MonoBehaviour
     private Cube InstantiateCubes(Cube cube)
     {
         Cube newCub = Instantiate(cube);
+        newCub.Initialize(_dividerScale, _dividerChance);
         newCub.Clicked += Spawn;
-        newCub.DivideChance(_dividerChance);
-
-        newCub.SetColor(RandomColor());
-        newCub.transform.localScale /= _dividerScale;
 
         return newCub;
     }
 
-    private Color RandomColor() => UnityEngine.Random.ColorHSV();
-
-    private int RandomCount() => UnityEngine.Random.Range(_minCount, _maxCount);
+    private int RandomizeCount() => UnityEngine.Random.Range(_minCount, _maxCount);
 }

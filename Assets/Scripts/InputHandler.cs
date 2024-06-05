@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
@@ -22,15 +21,8 @@ public class InputHandler : MonoBehaviour
         {
             if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
             {
-                cube.DestroyCube();
+                cube.Destroy();
             }
         }
     }
 }
-
-//1) ClickableObject - сколько кубов на сцене существует, столько рейкастов и будет обработано по нажатию мыши, 
-//    смысла в этом нет, это лишния работа для процессора, вам достаточно одного рейкаста при нажатии, 
-//    сравнение transform каждого куба с transform объекта на который нажали, не имеет никакого смысла, 
-//    ведь нужный объект найдётся только один, 
-//    нужно чтобы рейкасты обрабатывал отдельный объект не относящийся к кубам, 
-//    пусть он пускает рейкасты, ищет куб по лучу вызывает у него метод DestroyCube
