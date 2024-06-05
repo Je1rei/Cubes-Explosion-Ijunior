@@ -26,14 +26,18 @@ public class Cube : MonoBehaviour
         _renderer.material.color = UnityEngine.Random.ColorHSV();
     }
 
-    public void AddForce(float force)
+    public void AddForce(float force, float distance = 1)
     {
         float minValue = 50f;
         float maxValue = 100f;
+        force /= distance;
+
         Vector3 direction = new Vector3(force * RandomizeValue(minValue, maxValue + 1),
                 force * RandomizeValue(minValue, maxValue + 1), force * RandomizeValue(minValue, maxValue + 1));
 
         _rigidbody.AddForce(direction);
+
+        Debug.Log(force);
     }
 
     public void Destroy()

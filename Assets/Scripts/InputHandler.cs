@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
 
         if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
         {
-            if (hit.collider.gameObject.TryGetComponent<Cube>(out Cube cube))
+            if (hit.collider.gameObject.TryGetComponent(out Cube cube))
             {
                 cube.Destroy();
             }

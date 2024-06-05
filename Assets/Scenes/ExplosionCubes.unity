@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _generator
+      value: 
+      objectReference: {fileID: 2107089095}
     - target: {fileID: 4338427484493270053, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: m_Name
       value: Cube (3)
@@ -183,6 +191,10 @@ PrefabInstance:
       propertyPath: _inputHandler
       value: 
       objectReference: {fileID: 539142050}
+    - target: {fileID: 6027748461115801922, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _overlapRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6445465321311258451, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: _prefab
       value: 
@@ -931,6 +943,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _generator
+      value: 
+      objectReference: {fileID: 2107089095}
     - target: {fileID: 4338427484493270053, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: m_Name
       value: Cube (2)
@@ -943,6 +963,10 @@ PrefabInstance:
       propertyPath: _inputHandler
       value: 
       objectReference: {fileID: 539142050}
+    - target: {fileID: 6027748461115801922, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _overlapRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6445465321311258451, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: _prefab
       value: 
@@ -1135,6 +1159,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _generator
+      value: 
+      objectReference: {fileID: 2107089095}
     - target: {fileID: 4338427484493270053, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: m_Name
       value: Cube (1)
@@ -1147,6 +1179,10 @@ PrefabInstance:
       propertyPath: _inputHandler
       value: 
       objectReference: {fileID: 539142050}
+    - target: {fileID: 6027748461115801922, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _overlapRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6445465321311258451, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: _prefab
       value: 
@@ -1209,6 +1245,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811252799986617590, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _generator
+      value: 
+      objectReference: {fileID: 2107089095}
     - target: {fileID: 4338427484493270053, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: m_Name
       value: Cube
@@ -1221,6 +1265,10 @@ PrefabInstance:
       propertyPath: _inputHandler
       value: 
       objectReference: {fileID: 539142050}
+    - target: {fileID: 6027748461115801922, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
+      propertyPath: _overlapRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6445465321311258451, guid: 08813935024012c4f8be88fa2f2d5a19, type: 3}
       propertyPath: _prefab
       value: 

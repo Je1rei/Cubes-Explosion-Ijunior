@@ -14,7 +14,8 @@ public class Generator : MonoBehaviour
 
     [SerializeField] private List<Cube> _cubes;
 
-    public event Action<List<Cube>> Destroyed;
+    public event Action<List<Cube>> Separated;
+    public event Action<Cube> Destroyed;
 
     private void OnEnable()
     {
@@ -43,8 +44,10 @@ public class Generator : MonoBehaviour
 
             _cubes.Remove(cube);
             cube.Clicked -= Spawn;
-            Destroyed?.Invoke(createdCubes);
+            Separated?.Invoke(createdCubes);
         }
+        else
+            Destroyed?.Invoke(cube);
     }
 
     private Cube InstantiateCubes(Cube cube)
