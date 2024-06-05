@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
@@ -10,7 +9,7 @@ public class Explosion : MonoBehaviour
 
     private void OnEnable()
     {
-        _generator.Separated += Explode;
+        _generator.Separated += Explode;    
         _generator.Destroyed += Explode;
     }
 

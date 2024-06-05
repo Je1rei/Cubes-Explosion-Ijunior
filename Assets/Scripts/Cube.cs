@@ -28,16 +28,21 @@ public class Cube : MonoBehaviour
 
     public void AddForce(float force, float distance = 1)
     {
-        float minValue = 50f;
-        float maxValue = 100f;
+        float minDistance = 0.1f;
+        float minValue = 5f;
+        float maxValue = 10f;
+
+        if (distance < minDistance)
+            distance = minDistance;
+
         force /= distance;
 
-        Vector3 direction = new Vector3(force * RandomizeValue(minValue, maxValue + 1),
-                force * RandomizeValue(minValue, maxValue + 1), force * RandomizeValue(minValue, maxValue + 1));
+        Vector3 direction = new Vector3(
+                force * RandomizeValue(minValue, maxValue),
+                force * RandomizeValue(minValue, maxValue),
+                force * RandomizeValue(minValue, maxValue));
 
         _rigidbody.AddForce(direction);
-
-        Debug.Log(force);
     }
 
     public void Destroy()
